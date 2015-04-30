@@ -1,0 +1,39 @@
+{
+    "name": "fr3d/psr3-message-assertions",
+    "description": "Test your log messages are compliant with the PSR-3 specification",
+    "keywords": [
+        "assertion",
+        "log",
+        "phpunit",
+        "psr-3",
+        "test",
+        "testing"
+    ],
+    "license": "BSD-2-Clause",
+    "authors": [
+        {
+            "name": "Maks3w",
+            "email": "github.maks3w@virtualplanets.net"
+        }
+    ],
+    "homepage": "https://github.com/Maks3w/Psr3MessageAssertions",
+    "require": {
+        "php": ">= 5.3.0",
+        "psr/log": "~1.0",
+        "phpunit/phpunit": "~4.0"
+    },
+    "require-dev": {
+        "fabpot/php-cs-fixer": "~1.7",
+        "satooshi/php-coveralls": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "FR3D\\Psr3MessagesAssertions\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FR3D\\Psr3MessagesAssertionsTest\\": "tests/"
+        }
+    }
+}

@@ -37,7 +37,7 @@ class PlaceholderMethods
         $invalidPlaceholderNames = array_intersect($placeholders, $contextKeys);
 
         $invalidPlaceholderNames = array_filter($invalidPlaceholderNames, function ($placeholder) {
-            return !self::isValidPlaceholderName($placeholder);
+            return !PlaceholderMethods::isValidPlaceholderName($placeholder);
         });
 
         return $invalidPlaceholderNames;

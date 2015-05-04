@@ -13,6 +13,10 @@ class MessageTypeConstraint extends Constraint
 {
     protected function matches($other)
     {
+        if (is_array($other)) {
+            return false;
+        }
+
         $canCastToString = true;
 
         set_error_handler(function () use (&$canCastToString) {

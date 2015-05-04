@@ -6,9 +6,6 @@
         <testsuite name="librrary">
             <directory suffix="Test.php">tests/</directory>
         </testsuite>
-        <testsuite name="examples">
-            <directory suffix="Test.php">example/</directory>
-        </testsuite>
     </testsuites>
 
     <filter>

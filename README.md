@@ -1,6 +1,6 @@
 # PSR-3 Log message assertions
 
-[![Build Status](https://travis-ci.org/Maks3w/Psr3MessagesAssertions.svg?branch=master)](https://travis-ci.org/Maks3w/Psr3MessagesAssertions)
+[![Build Status](https://travis-ci.org/Maks3w/Psr3MessageAssertions.svg?branch=master)](https://travis-ci.org/Maks3w/Psr3MessageAssertions)
 [![Coverage Status](https://coveralls.io/repos/Maks3w/Psr3MessageAssertions/badge.svg?branch=master)](https://coveralls.io/r/Maks3w/Psr3MessageAssertions?branch=master)
 
 Test your log messages are compliant with the [PSR-3 (Logger) specification](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md)

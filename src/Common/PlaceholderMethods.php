@@ -36,7 +36,7 @@ class PlaceholderMethods
     {
         $invalidPlaceholderNames = array_intersect($placeholders, $contextKeys);
 
-        $invalidPlaceholderNames = array_filter($invalidPlaceholderNames, function($placeholder) {
+        $invalidPlaceholderNames = array_filter($invalidPlaceholderNames, function ($placeholder) {
             return !self::isValidPlaceholderName($placeholder);
         });
 
@@ -66,6 +66,6 @@ class PlaceholderMethods
      */
     public static function isValidPlaceholderName($placeholder)
     {
-        return (bool)preg_match('/^[a-zA-Z_\.]+$/', $placeholder);
+        return (bool) preg_match('/^[a-zA-Z_\.]+$/', $placeholder);
     }
 }

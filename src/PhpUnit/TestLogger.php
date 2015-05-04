@@ -66,7 +66,6 @@ class TestLogger extends AbstractLogger
         Assert::assertThat($context, $constraint, $message);
     }
 
-
     /**
      * Asserts log message placeholders are well formed.
      *

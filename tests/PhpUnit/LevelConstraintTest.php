@@ -22,8 +22,8 @@ class LevelConstraintTest extends TestCase
 
     public function testConstraintDefinition()
     {
-        $this->assertEquals(1, count($this->constraint));
-        $this->assertEquals(
+        self::assertEquals(1, count($this->constraint));
+        self::assertEquals(
             'is a recognized log level (emergency, alert, critical, error, warning, notice, info, debug)',
             $this->constraint->toString()
         );
@@ -38,7 +38,7 @@ class LevelConstraintTest extends TestCase
      */
     public function testValidLogLevel($logLevel)
     {
-        $this->assertTrue($this->constraint->evaluate($logLevel, '', true));
+        self::assertTrue($this->constraint->evaluate($logLevel, '', true));
     }
 
     /**
@@ -50,13 +50,13 @@ class LevelConstraintTest extends TestCase
      */
     public function testInvalidLogLevel($logLevel)
     {
-        $this->assertFalse($this->constraint->evaluate($logLevel, '', true));
+        self::assertFalse($this->constraint->evaluate($logLevel, '', true));
 
         try {
             $this->constraint->evaluate($logLevel);
-            $this->fail('Expected ExpectationFailedException to be thrown');
+            self::fail('Expected ExpectationFailedException to be thrown');
         } catch (ExpectationFailedException $e) {
-            $this->assertEquals(
+            self::assertEquals(
                 <<<EOF
 Failed asserting that '$logLevel' is a recognized log level (emergency, alert, critical, error, warning, notice, info, debug).
 

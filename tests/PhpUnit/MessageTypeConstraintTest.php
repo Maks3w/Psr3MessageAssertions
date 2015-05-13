@@ -23,8 +23,8 @@ class MessageTypeConstraintTest extends TestCase
 
     public function testConstraintDefinition()
     {
-        $this->assertEquals(1, count($this->constraint));
-        $this->assertEquals(
+        self::assertEquals(1, count($this->constraint));
+        self::assertEquals(
             'is string or a object with a __toString() method',
             $this->constraint->toString()
         );
@@ -39,7 +39,7 @@ class MessageTypeConstraintTest extends TestCase
      */
     public function testValidMessageType($message)
     {
-        $this->assertTrue($this->constraint->evaluate($message, '', true));
+        self::assertTrue($this->constraint->evaluate($message, '', true));
     }
 
     /**
@@ -52,13 +52,13 @@ class MessageTypeConstraintTest extends TestCase
      */
     public function testInvalidMessageType($message, $type)
     {
-        $this->assertFalse($this->constraint->evaluate($message, '', true));
+        self::assertFalse($this->constraint->evaluate($message, '', true));
 
         try {
             $this->constraint->evaluate($message);
-            $this->fail('Expected ExpectationFailedException to be thrown');
+            self::fail('Expected ExpectationFailedException to be thrown');
         } catch (ExpectationFailedException $e) {
-            $this->assertEquals(
+            self::assertEquals(
                 <<<EOF
 Failed asserting that $type is string or a object with a __toString() method.
 

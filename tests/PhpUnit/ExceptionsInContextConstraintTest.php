@@ -21,8 +21,8 @@ class ExceptionsInContextConstraintTest extends TestCase
 
     public function testConstraintDefinition()
     {
-        $this->assertEquals(1, count($this->constraint));
-        $this->assertEquals(
+        self::assertEquals(1, count($this->constraint));
+        self::assertEquals(
             'exceptions are located in the "exception" key',
             $this->constraint->toString()
         );
@@ -37,7 +37,7 @@ class ExceptionsInContextConstraintTest extends TestCase
      */
     public function testValidConstraint($context)
     {
-        $this->assertTrue($this->constraint->evaluate($context, '', true));
+        self::assertTrue($this->constraint->evaluate($context, '', true));
     }
 
     /**
@@ -50,13 +50,13 @@ class ExceptionsInContextConstraintTest extends TestCase
      */
     public function testInvalidConstraint($message, $invalidKey)
     {
-        $this->assertFalse($this->constraint->evaluate($message, '', true));
+        self::assertFalse($this->constraint->evaluate($message, '', true));
 
         try {
             $this->constraint->evaluate($message);
-            $this->fail('Expected ExpectationFailedException to be thrown');
+            self::fail('Expected ExpectationFailedException to be thrown');
         } catch (ExpectationFailedException $e) {
-            $this->assertEquals(
+            self::assertEquals(
                 <<<EOF
 Failed asserting that exceptions are located in the "exception" key. The key "$invalidKey" contains an exception object.
 

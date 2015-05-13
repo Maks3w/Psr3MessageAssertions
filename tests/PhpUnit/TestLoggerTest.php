@@ -27,9 +27,9 @@ class TestLoggerTest extends TestCase
     {
         try {
             $this->logger->assertLogLevelIsValid('invalid');
-            $this->fail('Expected ExpectationFailedException to be thrown');
+            self::fail('Expected ExpectationFailedException to be thrown');
         } catch (ExpectationFailedException $e) {
-            $this->assertTrue(true);
+            self::assertTrue(true);
         }
     }
 
@@ -42,9 +42,9 @@ class TestLoggerTest extends TestCase
     {
         try {
             $this->logger->assertMessageType(new \stdClass());
-            $this->fail('Expected ExpectationFailedException to be thrown');
+            self::fail('Expected ExpectationFailedException to be thrown');
         } catch (ExpectationFailedException $e) {
-            $this->assertTrue(true);
+            self::assertTrue(true);
         }
     }
 
@@ -57,9 +57,9 @@ class TestLoggerTest extends TestCase
     {
         try {
             $this->logger->assertContext(array('foo' => new \Exception()));
-            $this->fail('Expected ExpectationFailedException to be thrown');
+            self::fail('Expected ExpectationFailedException to be thrown');
         } catch (ExpectationFailedException $e) {
-            $this->assertTrue(true);
+            self::assertTrue(true);
         }
     }
 
@@ -73,9 +73,9 @@ class TestLoggerTest extends TestCase
     {
         try {
             $this->logger->assertPlaceholder('{foo}', array());
-            $this->fail('Expected ExpectationFailedException to be thrown');
+            self::fail('Expected ExpectationFailedException to be thrown');
         } catch (ExpectationFailedException $e) {
-            $this->assertTrue(true);
+            self::assertTrue(true);
         }
     }
 
@@ -83,9 +83,9 @@ class TestLoggerTest extends TestCase
     {
         try {
             $this->logger->assertPlaceholder('{$foo}', array('$foo' => 'baz'));
-            $this->fail('Expected ExpectationFailedException to be thrown');
+            self::fail('Expected ExpectationFailedException to be thrown');
         } catch (ExpectationFailedException $e) {
-            $this->assertTrue(true);
+            self::assertTrue(true);
         }
     }
 
@@ -102,7 +102,7 @@ class TestLoggerTest extends TestCase
             )
         );
 
-        $this->assertTrue(true);
+        self::assertTrue(true);
     }
 
     /**
@@ -118,9 +118,9 @@ class TestLoggerTest extends TestCase
     {
         try {
             $this->logger->log($level, $message, $context);
-            $this->fail('Expected ExpectationFailedException to be thrown');
+            self::fail('Expected ExpectationFailedException to be thrown');
         } catch (ExpectationFailedException $e) {
-            $this->assertTrue(true);
+            self::assertTrue(true);
         }
     }
 

@@ -23,8 +23,7 @@
         "phpunit/phpunit": "~4.0"
     },
     "require-dev": {
-        "fabpot/php-cs-fixer": "~1.7",
-        "satooshi/php-coveralls": "dev-master"
+        "fabpot/php-cs-fixer": "~1.7"
     },
     "autoload": {
         "psr-4": {

@@ -8,7 +8,7 @@ use Psr\Log\LogLevel;
 /**
  * Validate log level match with defined log levels in the specification.
  *
- * Notice specification does not limit this aspect and custom log leves is allowed.
+ * Notice specification does not limit this aspect and custom log level is allowed.
  *
  * @see https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md#11-basics
  */

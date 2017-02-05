@@ -1,6 +1,6 @@
 <?php
 
-namespace FR3D\Psr3MessagesAssertionsTest\Fixture;
+namespace FR3D\Psr3MessagesAssertions\Fixture;
 
 class ObjectWithToString
 {

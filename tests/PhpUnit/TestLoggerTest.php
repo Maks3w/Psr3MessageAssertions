@@ -1,8 +1,7 @@
 <?php
 
-namespace FR3D\Psr3MessagesAssertionsTest\PhpUnit;
+namespace FR3D\Psr3MessagesAssertions\PhpUnit;
 
-use FR3D\Psr3MessagesAssertions\PhpUnit\TestLogger;
 use PHPUnit_Framework_ExpectationFailedException as ExpectationFailedException;
 use PHPUnit_Framework_TestCase as TestCase;
 

@@ -1,9 +1,8 @@
 <?php
 
-namespace FR3D\Psr3MessagesAssertionsTest\PhpUnit;
+namespace FR3D\Psr3MessagesAssertions\PhpUnit;
 
-use FR3D\Psr3MessagesAssertions\PhpUnit\MessageTypeConstraint;
-use FR3D\Psr3MessagesAssertionsTest\Fixture\ObjectWithToString;
+use FR3D\Psr3MessagesAssertions\Fixture\ObjectWithToString;
 use PHPUnit_Framework_ExpectationFailedException as ExpectationFailedException;
 use PHPUnit_Framework_TestCase as TestCase;
 use PHPUnit_Framework_TestFailure as TestFailure;

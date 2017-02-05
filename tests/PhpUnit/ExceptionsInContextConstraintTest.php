@@ -68,17 +68,17 @@ EOF
 
     public function validContextProvider()
     {
-        return array(
-            'exception key with Exception' => array(array('exception' => new \Exception())),
-            'exception key with anything' => array(array('exception' => 'foo')),
-            'foo key with non Exception object' => array(array('foo' => new \stdClass())),
-        );
+        return [
+            'exception key with Exception' => [['exception' => new \Exception()]],
+            'exception key with anything' => [['exception' => 'foo']],
+            'foo key with non Exception object' => [['foo' => new \stdClass()]],
+        ];
     }
 
     public function invalidContextProvider()
     {
-        return array(
-            'foo key with Exception' => array(array('foo' => new \Exception()), 'foo'),
-        );
+        return [
+            'foo key with Exception' => [['foo' => new \Exception()], 'foo'],
+        ];
     }
 }

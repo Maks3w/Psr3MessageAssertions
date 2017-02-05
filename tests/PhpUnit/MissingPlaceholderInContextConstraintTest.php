@@ -15,13 +15,13 @@ class MissingPlaceholderInContextConstraintTest extends TestCase
 
     protected function setUp()
     {
-        $context = array(
+        $context = [
             'exists' => 'baz',
             'Exists' => 'baz',
             'exists.' => 'baz',
             'exists_' => 'baz',
             'invalid$character' => 'character $ is not allowed',
-        );
+        ];
 
         $this->constraint = new MissingPlaceholderInContextConstraint($context);
     }
@@ -76,17 +76,17 @@ EOF
 
     public function validMessageTypeProvider()
     {
-        return array(
-            'Without placeholders' => array('any'),
-            'Placeholder [a-zA-Z_.] exists in context' => array('{exists}{Exists}{exists_}{exists.}'),
-            'Placeholders with invalid character are not placeholders' => array('{exist$}'),
-        );
+        return [
+            'Without placeholders' => ['any'],
+            'Placeholder [a-zA-Z_.] exists in context' => ['{exists}{Exists}{exists_}{exists.}'],
+            'Placeholders with invalid character are not placeholders' => ['{exist$}'],
+        ];
     }
 
     public function invalidMessageTypeProvider()
     {
-        return array(
-            'Placeholder without context' => array('{not_exists}', 'not_exists'),
-        );
+        return [
+            'Placeholder without context' => ['{not_exists}', 'not_exists'],
+        ];
     }
 }

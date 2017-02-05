@@ -70,21 +70,21 @@ EOF
 
     public function validMessageTypeProvider()
     {
-        return array(
-            'string' => array('message'),
-            'object with toString' => array(new ObjectWithToString()),
-            'integer' => array(1),
-            'double' => array(1.1),
-            'null' => array(null),
-        );
+        return [
+            'string' => ['message'],
+            'object with toString' => [new ObjectWithToString()],
+            'integer' => [1],
+            'double' => [1.1],
+            'null' => [null],
+        ];
     }
 
     public function invalidMessageTypeProvider()
     {
-        return array(
-            'array' => array(array(), 'array'),
-            'function' => array(function () {}, 'object'),
-            'object without toString' => array(new stdClass(), 'object'),
-        );
+        return [
+            'array' => [[], 'array'],
+            'function' => [function () {}, 'object'],
+            'object without toString' => [new stdClass(), 'object'],
+        ];
     }
 }

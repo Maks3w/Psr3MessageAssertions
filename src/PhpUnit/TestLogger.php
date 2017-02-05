@@ -19,7 +19,7 @@ class TestLogger extends AbstractLogger
      *
      * @return null
      */
-    public function log($level, $message, array $context = array())
+    public function log($level, $message, array $context = [])
     {
         $this->assertLogLevelIsValid($level);
         $this->assertMessageType($message);

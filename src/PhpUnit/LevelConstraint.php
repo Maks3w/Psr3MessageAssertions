@@ -17,7 +17,7 @@ class LevelConstraint extends Constraint
     /**
      * @var string[]
      */
-    protected $allowedLevels = array(
+    protected $allowedLevels = [
         LogLevel::EMERGENCY,
         LogLevel::ALERT,
         LogLevel::CRITICAL,
@@ -26,7 +26,7 @@ class LevelConstraint extends Constraint
         LogLevel::NOTICE,
         LogLevel::INFO,
         LogLevel::DEBUG,
-    );
+    ];
 
     protected function matches($other)
     {

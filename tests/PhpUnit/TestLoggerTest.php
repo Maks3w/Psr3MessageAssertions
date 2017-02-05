@@ -49,13 +49,13 @@ class TestLoggerTest extends TestCase
 
     public function testValidContext()
     {
-        $this->logger->assertContext(array('foo' => 'baz'));
+        $this->logger->assertContext(['foo' => 'baz']);
     }
 
     public function testInvalidContext()
     {
         try {
-            $this->logger->assertContext(array('foo' => new \Exception()));
+            $this->logger->assertContext(['foo' => new \Exception()]);
             self::fail('Expected ExpectationFailedException to be thrown');
         } catch (ExpectationFailedException $e) {
             self::assertTrue(true);
@@ -64,14 +64,14 @@ class TestLoggerTest extends TestCase
 
     public function testValidPlaceholder()
     {
-        $this->logger->assertPlaceholder('{foo}', array('foo' => 'baz'));
-        $this->logger->assertPlaceholder('{$foo}', array('foo' => 'baz'));
+        $this->logger->assertPlaceholder('{foo}', ['foo' => 'baz']);
+        $this->logger->assertPlaceholder('{$foo}', ['foo' => 'baz']);
     }
 
     public function testPlaceholderIsMissing()
     {
         try {
-            $this->logger->assertPlaceholder('{foo}', array());
+            $this->logger->assertPlaceholder('{foo}', []);
             self::fail('Expected ExpectationFailedException to be thrown');
         } catch (ExpectationFailedException $e) {
             self::assertTrue(true);
@@ -81,7 +81,7 @@ class TestLoggerTest extends TestCase
     public function testPlaceholderNameIsInvalid()
     {
         try {
-            $this->logger->assertPlaceholder('{$foo}', array('$foo' => 'baz'));
+            $this->logger->assertPlaceholder('{$foo}', ['$foo' => 'baz']);
             self::fail('Expected ExpectationFailedException to be thrown');
         } catch (ExpectationFailedException $e) {
             self::assertTrue(true);
@@ -93,12 +93,12 @@ class TestLoggerTest extends TestCase
         $this->logger->log(
             'debug',
             '{$foo} {baz_}{bAz}',
-            array(
+            [
                 'baz_' => 'value',
-                'bAz' => array(),
+                'bAz' => [],
                 'exception' => new \Exception(),
                 'extra' => new \stdClass(),
-            )
+            ]
         );
 
         self::assertTrue(true);
@@ -125,12 +125,12 @@ class TestLoggerTest extends TestCase
 
     public function invalidLogProvider()
     {
-        return array(
-            'invalid log level' => array('invalid_level', '', array()),
-            'invalid log type' => array('debug', array(), array()),
-            'missing placeholder in context' => array('debug', '{foo}', array()),
-            'invalid placeholder name' => array('debug', '{$foo}', array('$foo' => '')),
-            'invalid exception context key' => array('debug', '', array('foo' => new \Exception())),
-        );
+        return [
+            'invalid log level' => ['invalid_level', '', []],
+            'invalid log type' => ['debug', [], []],
+            'missing placeholder in context' => ['debug', '{foo}', []],
+            'invalid placeholder name' => ['debug', '{$foo}', ['$foo' => '']],
+            'invalid exception context key' => ['debug', '', ['foo' => new \Exception()]],
+        ];
     }
 }

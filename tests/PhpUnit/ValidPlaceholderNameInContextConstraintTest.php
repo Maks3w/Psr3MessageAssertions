@@ -15,9 +15,9 @@ class ValidPlaceholderNameInContextConstraintTest extends TestCase
 
     protected function setUp()
     {
-        $context = array(
+        $context = [
             'invalid$character' => 'character $ is not allowed',
-        );
+        ];
 
         $this->constraint = new ValidPlaceholderNameInContextConstraint($context);
     }
@@ -72,15 +72,15 @@ EOF
 
     public function validMessageTypeProvider()
     {
-        return array(
-            'Placeholders with invalid character are not placeholders' => array('{exist$}'),
-        );
+        return [
+            'Placeholders with invalid character are not placeholders' => ['{exist$}'],
+        ];
     }
 
     public function invalidMessageTypeProvider()
     {
-        return array(
-            'Placeholder invalid characters' => array('{invalid$character}', 'invalid$character'),
-        );
+        return [
+            'Placeholder invalid characters' => ['{invalid$character}', 'invalid$character'],
+        ];
     }
 }

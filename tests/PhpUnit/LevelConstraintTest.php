@@ -68,24 +68,24 @@ EOF
 
     public function validLogLevelProvider()
     {
-        return array(
-            LogLevel::EMERGENCY => array('emergency'),
-            LogLevel::ALERT => array('alert'),
-            LogLevel::CRITICAL => array('critical'),
-            LogLevel::ERROR => array('error'),
-            LogLevel::WARNING => array('warning'),
-            LogLevel::NOTICE => array('notice'),
-            LogLevel::INFO => array('info'),
-            LogLevel::DEBUG => array('debug'),
-        );
+        return [
+            LogLevel::EMERGENCY => ['emergency'],
+            LogLevel::ALERT => ['alert'],
+            LogLevel::CRITICAL => ['critical'],
+            LogLevel::ERROR => ['error'],
+            LogLevel::WARNING => ['warning'],
+            LogLevel::NOTICE => ['notice'],
+            LogLevel::INFO => ['info'],
+            LogLevel::DEBUG => ['debug'],
+        ];
     }
 
     public function invalidLogLevelProvider()
     {
-        return array(
-            'emerg' => array('emerg'),
-            'crit' => array('crit'),
-            'err' => array('err'),
-        );
+        return [
+            'emerg' => ['emerg'],
+            'crit' => ['crit'],
+            'err' => ['err'],
+        ];
     }
 }

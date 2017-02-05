@@ -31,7 +31,7 @@ class ExceptionsInContextConstraint extends Constraint
      *
      * @param array $context
      *
-     * @return null|string `null` if there is no exception in a wrong context key or `string` with the erronous context key.
+     * @return null|string `null` if there is no exception in a wrong context key or `string` with the erroneous context key.
      */
     protected function findExceptions(array $context)
     {

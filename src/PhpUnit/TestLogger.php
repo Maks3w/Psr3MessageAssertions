@@ -10,15 +10,6 @@ use Psr\Log\AbstractLogger;
  */
 class TestLogger extends AbstractLogger
 {
-    /**
-     * Logs with an arbitrary level.
-     *
-     * @param mixed $level
-     * @param string $message
-     * @param array $context
-     *
-     * @return null
-     */
     public function log($level, $message, array $context = [])
     {
         $this->assertLogLevelIsValid($level);
@@ -29,11 +20,8 @@ class TestLogger extends AbstractLogger
 
     /**
      * Asserts log level match with defined log levels in the specification.
-     *
-     * @param string $level
-     * @param string $message
      */
-    public function assertLogLevelIsValid($level, $message = '')
+    public function assertLogLevelIsValid(string $level, string $message = '')
     {
         $constraint = new LevelConstraint();
 
@@ -42,11 +30,8 @@ class TestLogger extends AbstractLogger
 
     /**
      * Asserts message is a valid argument type.
-     *
-     * @param string $logMessage
-     * @param string $message
      */
-    public function assertMessageType($logMessage, $message = '')
+    public function assertMessageType($logMessage, string $message = '')
     {
         $constraint = new MessageTypeConstraint();
 
@@ -55,11 +40,8 @@ class TestLogger extends AbstractLogger
 
     /**
      * Asserts log message context is well formed.
-     *
-     * @param array $context
-     * @param string $message
      */
-    public function assertContext(array $context, $message = '')
+    public function assertContext(array $context, string $message = '')
     {
         $constraint = new ExceptionsInContextConstraint();
 
@@ -68,12 +50,8 @@ class TestLogger extends AbstractLogger
 
     /**
      * Asserts log message placeholders are well formed.
-     *
-     * @param string $logMessage
-     * @param array $context
-     * @param string $message
      */
-    public function assertPlaceholder($logMessage, array $context, $message = '')
+    public function assertPlaceholder(string $logMessage, array $context, string $message = '')
     {
         $constraint = new MissingPlaceholderInContextConstraint($context);
 

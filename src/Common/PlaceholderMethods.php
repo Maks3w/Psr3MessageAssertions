@@ -10,12 +10,9 @@ class PlaceholderMethods
     /**
      * Check if placeholder exists in the context array.
      *
-     * @param array $placeholders
-     * @param array $contextKeys
-     *
      * @return string[] List of placeholders missing in the context array.
      */
-    public static function findMissingContextKeys(array $placeholders, array $contextKeys)
+    public static function findMissingContextKeys(array $placeholders, array $contextKeys): array
     {
         $missingContextKeys = array_diff($placeholders, $contextKeys);
 
@@ -27,12 +24,9 @@ class PlaceholderMethods
     /**
      * Check if placeholder exists in the context array and contains invalid characters.
      *
-     * @param array $placeholders
-     * @param array $contextKeys
-     *
      * @return string[] List of placeholders missing in the context array.
      */
-    public static function findInvalidPlaceholdersNames(array $placeholders, array $contextKeys)
+    public static function findInvalidPlaceholdersNames(array $placeholders, array $contextKeys): array
     {
         $invalidPlaceholderNames = array_intersect($placeholders, $contextKeys);
 
@@ -45,12 +39,8 @@ class PlaceholderMethods
 
     /**
      * Extract placeholders from log message.
-     *
-     * @param string $message Log message.
-     *
-     * @return array Placeholders.
      */
-    public static function extractPlaceholders($message)
+    public static function extractPlaceholders(string $message): array
     {
         preg_match('/\{([^\}]+)\}/', $message, $matches);
 
@@ -59,12 +49,8 @@ class PlaceholderMethods
 
     /**
      * Validate if placeholder is composed only with valid characters.
-     *
-     * @param string $placeholder
-     *
-     * @return bool
      */
-    public static function isValidPlaceholderName($placeholder)
+    public static function isValidPlaceholderName(string $placeholder): bool
     {
         return (bool) preg_match('/^[a-zA-Z_\.]+$/', $placeholder);
     }

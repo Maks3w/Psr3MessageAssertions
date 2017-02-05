@@ -19,9 +19,6 @@ class ValidPlaceholderNameInContextConstraint extends Constraint
      */
     protected $contextKeys;
 
-    /**
-     * @param array $context
-     */
     public function __construct(array $context)
     {
         parent::__construct();

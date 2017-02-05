@@ -2,7 +2,7 @@
 
 namespace FR3D\Psr3MessagesAssertions\PhpUnit;
 
-use PHPUnit_Framework_Constraint as Constraint;
+use PHPUnit\Framework\Constraint\Constraint;
 use Psr\Log\LogLevel;
 
 /**

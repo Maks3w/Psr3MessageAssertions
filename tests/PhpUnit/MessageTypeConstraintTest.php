@@ -3,15 +3,16 @@
 namespace FR3D\Psr3MessagesAssertions\PhpUnit;
 
 use FR3D\Psr3MessagesAssertions\Fixture\ObjectWithToString;
-use PHPUnit_Framework_ExpectationFailedException as ExpectationFailedException;
-use PHPUnit_Framework_TestCase as TestCase;
-use PHPUnit_Framework_TestFailure as TestFailure;
+use PHPUnit\Framework\Constraint\Constraint;
+use PHPUnit\Framework\ExpectationFailedException;
+use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\TestFailure;
 use stdClass;
 
 class MessageTypeConstraintTest extends TestCase
 {
     /**
-     * @var \PHPUnit_Framework_Constraint
+     * @var Constraint
      */
     protected $constraint;
 

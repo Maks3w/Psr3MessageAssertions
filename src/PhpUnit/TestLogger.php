@@ -2,7 +2,7 @@
 
 namespace FR3D\Psr3MessagesAssertions\PhpUnit;
 
-use PHPUnit_Framework_Assert as Assert;
+use PHPUnit\Framework\Assert;
 use Psr\Log\AbstractLogger;
 
 /**

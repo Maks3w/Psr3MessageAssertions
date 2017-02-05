@@ -2,8 +2,8 @@
 
 namespace FR3D\Psr3MessagesAssertions\PhpUnit;
 
-use PHPUnit_Framework_ExpectationFailedException as ExpectationFailedException;
-use PHPUnit_Framework_TestCase as TestCase;
+use PHPUnit\Framework\ExpectationFailedException;
+use PHPUnit\Framework\TestCase;
 
 class TestLoggerTest extends TestCase
 {

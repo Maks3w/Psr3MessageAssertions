@@ -3,7 +3,7 @@
 namespace FR3D\Psr3MessagesAssertions\PhpUnit;
 
 use FR3D\Psr3MessagesAssertions\Common\PlaceholderMethods;
-use PHPUnit_Framework_Constraint as Constraint;
+use PHPUnit\Framework\Constraint\Constraint;
 
 /**
  * Validate log message placeholders are present in the context array keys.

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace FR3D\Psr3MessagesAssertions\PhpUnit;
 
 use PHPUnit\Framework\Constraint\Constraint;
@@ -11,7 +13,7 @@ use PHPUnit\Framework\Constraint\Constraint;
  */
 class MessageTypeConstraint extends Constraint
 {
-    protected function matches($other)
+    protected function matches($other): bool
     {
         if (is_array($other)) {
             return false;
@@ -21,8 +23,6 @@ class MessageTypeConstraint extends Constraint
 
         set_error_handler(function () use (&$canCastToString) {
             $canCastToString = false;
-
-            return;
         });
 
         $other = (string) $other;
@@ -32,12 +32,12 @@ class MessageTypeConstraint extends Constraint
         return $canCastToString;
     }
 
-    protected function failureDescription($other)
+    protected function failureDescription($other): string
     {
         return gettype($other) . ' ' . $this->toString();
     }
 
-    public function toString()
+    public function toString(): string
     {
         return 'is string or a object with a __toString() method';
     }

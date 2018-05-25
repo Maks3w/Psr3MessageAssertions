@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace FR3D\Psr3MessagesAssertions\PhpUnit;
 
 use PHPUnit\Framework\Constraint\Constraint;
@@ -11,17 +13,17 @@ use PHPUnit\Framework\Constraint\Constraint;
  */
 class ExceptionsInContextConstraint extends Constraint
 {
-    protected function matches($other)
+    protected function matches($other): bool
     {
         return (null === $this->findExceptions($other));
     }
 
-    protected function failureDescription($other)
+    protected function failureDescription($other): string
     {
         return $this->toString() . '. The key "' . $this->findExceptions($other) . '" contains an exception object';
     }
 
-    public function toString()
+    public function toString(): string
     {
         return 'exceptions are located in the "exception" key';
     }

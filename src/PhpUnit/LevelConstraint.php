@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace FR3D\Psr3MessagesAssertions\PhpUnit;
 
 use PHPUnit\Framework\Constraint\Constraint;
@@ -28,12 +30,12 @@ class LevelConstraint extends Constraint
         LogLevel::DEBUG,
     ];
 
-    protected function matches($other)
+    protected function matches($other): bool
     {
         return in_array($other, $this->allowedLevels, true);
     }
 
-    public function toString()
+    public function toString(): string
     {
         return 'is a recognized log level (' . implode(', ', $this->allowedLevels) . ')';
     }

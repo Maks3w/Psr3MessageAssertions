@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace FR3D\Psr3MessagesAssertions\PhpUnit;
 
 use FR3D\Psr3MessagesAssertions\Common\PlaceholderMethods;
@@ -26,7 +28,7 @@ class ValidPlaceholderNameInContextConstraint extends Constraint
         $this->contextKeys = array_keys($context);
     }
 
-    protected function matches($other)
+    protected function matches($other): bool
     {
         $placeholders = PlaceholderMethods::extractPlaceholders($other);
 
@@ -35,7 +37,7 @@ class ValidPlaceholderNameInContextConstraint extends Constraint
         return empty($missingContextKeys);
     }
 
-    protected function failureDescription($other)
+    protected function failureDescription($other): string
     {
         $placeholders = PlaceholderMethods::extractPlaceholders($other);
 
@@ -51,7 +53,7 @@ class ValidPlaceholderNameInContextConstraint extends Constraint
         );
     }
 
-    public function toString()
+    public function toString(): string
     {
         return 'placeholder has valid name';
     }

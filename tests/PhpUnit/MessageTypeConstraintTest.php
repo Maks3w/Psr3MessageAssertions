@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace FR3D\Psr3MessagesAssertions\PhpUnit;
 
 use FR3D\Psr3MessagesAssertions\Fixture\ObjectWithToString;
@@ -84,7 +86,8 @@ EOF
     {
         return [
             'array' => [[], 'array'],
-            'function' => [function () {}, 'object'],
+            'function' => [function () {
+            }, 'object'],
             'object without toString' => [new stdClass(), 'object'],
         ];
     }

@@ -18,7 +18,7 @@ class MessageTypeConstraintTest extends TestCase
      */
     protected $constraint;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->constraint = new MessageTypeConstraint();
     }

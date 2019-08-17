@@ -23,8 +23,6 @@ class MissingPlaceholderInContextConstraint extends Constraint
 
     public function __construct(array $context)
     {
-        parent::__construct();
-
         $this->contextKeys = array_keys($context);
     }
 

@@ -16,7 +16,7 @@ class ExceptionsInContextConstraintTest extends TestCase
      */
     protected $constraint;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->constraint = new ExceptionsInContextConstraint();
     }

@@ -16,7 +16,7 @@ class ValidPlaceholderNameInContextConstraintTest extends TestCase
      */
     protected $constraint;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $context = [
             'invalid$character' => 'character $ is not allowed',

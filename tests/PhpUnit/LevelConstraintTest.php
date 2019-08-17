@@ -17,7 +17,7 @@ class LevelConstraintTest extends TestCase
      */
     protected $constraint;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->constraint = new LevelConstraint();
     }

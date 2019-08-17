@@ -16,7 +16,7 @@ class MissingPlaceholderInContextConstraintTest extends TestCase
      */
     protected $constraint;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $context = [
             'exists' => 'baz',

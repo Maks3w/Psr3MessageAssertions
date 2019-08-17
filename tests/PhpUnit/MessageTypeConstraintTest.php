@@ -25,7 +25,7 @@ class MessageTypeConstraintTest extends TestCase
 
     public function testConstraintDefinition()
     {
-        self::assertEquals(1, count($this->constraint));
+        self::assertCount(1, $this->constraint);
         self::assertEquals(
             'is string or a object with a __toString() method',
             $this->constraint->toString()

@@ -31,7 +31,7 @@ class MissingPlaceholderInContextConstraintTest extends TestCase
 
     public function testConstraintDefinition()
     {
-        self::assertEquals(1, count($this->constraint));
+        self::assertCount(1, $this->constraint);
         self::assertEquals(
             'placeholder exists in the context array',
             $this->constraint->toString()

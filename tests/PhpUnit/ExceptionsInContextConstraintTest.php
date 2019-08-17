@@ -23,7 +23,7 @@ class ExceptionsInContextConstraintTest extends TestCase
 
     public function testConstraintDefinition()
     {
-        self::assertEquals(1, count($this->constraint));
+        self::assertCount(1, $this->constraint);
         self::assertEquals(
             'exceptions are located in the "exception" key',
             $this->constraint->toString()

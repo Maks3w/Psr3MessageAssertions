@@ -25,7 +25,7 @@ class ValidPlaceholderNameInContextConstraintTest extends TestCase
         $this->constraint = new ValidPlaceholderNameInContextConstraint($context);
     }
 
-    public function testConstraintDefinition()
+    public function testConstraintDefinition(): void
     {
         self::assertCount(1, $this->constraint);
         self::assertEquals(
@@ -41,7 +41,7 @@ class ValidPlaceholderNameInContextConstraintTest extends TestCase
      *
      * @return void
      */
-    public function testValidMessageType($message)
+    public function testValidMessageType($message): void
     {
         self::assertTrue($this->constraint->evaluate($message, '', true));
     }
@@ -54,7 +54,7 @@ class ValidPlaceholderNameInContextConstraintTest extends TestCase
      *
      * @return void
      */
-    public function testInvalidMessageType($message, $placeholder)
+    public function testInvalidMessageType($message, $placeholder): void
     {
         self::assertFalse($this->constraint->evaluate($message, '', true));
 
@@ -73,14 +73,14 @@ EOF
         }
     }
 
-    public function validMessageTypeProvider()
+    public function validMessageTypeProvider(): array
     {
         return [
             'Placeholders with invalid character are not placeholders' => ['{exist$}'],
         ];
     }
 
-    public function invalidMessageTypeProvider()
+    public function invalidMessageTypeProvider(): array
     {
         return [
             'Placeholder invalid characters' => ['{invalid$character}', 'invalid$character'],

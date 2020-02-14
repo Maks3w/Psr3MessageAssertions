@@ -23,7 +23,7 @@ class TestLogger extends AbstractLogger
     /**
      * Asserts log level match with defined log levels in the specification.
      */
-    public function assertLogLevelIsValid(string $level, string $message = '')
+    public function assertLogLevelIsValid(string $level, string $message = ''): void
     {
         $constraint = new LevelConstraint();
 
@@ -33,7 +33,7 @@ class TestLogger extends AbstractLogger
     /**
      * Asserts message is a valid argument type.
      */
-    public function assertMessageType($logMessage, string $message = '')
+    public function assertMessageType($logMessage, string $message = ''): void
     {
         $constraint = new MessageTypeConstraint();
 
@@ -43,7 +43,7 @@ class TestLogger extends AbstractLogger
     /**
      * Asserts log message context is well formed.
      */
-    public function assertContext(array $context, string $message = '')
+    public function assertContext(array $context, string $message = ''): void
     {
         $constraint = new ExceptionsInContextConstraint();
 
@@ -53,7 +53,7 @@ class TestLogger extends AbstractLogger
     /**
      * Asserts log message placeholders are well formed.
      */
-    public function assertPlaceholder(string $logMessage, array $context, string $message = '')
+    public function assertPlaceholder(string $logMessage, array $context, string $message = ''): void
     {
         $constraint = new MissingPlaceholderInContextConstraint($context);
 

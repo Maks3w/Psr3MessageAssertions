@@ -23,7 +23,7 @@ class MessageTypeConstraintTest extends TestCase
         $this->constraint = new MessageTypeConstraint();
     }
 
-    public function testConstraintDefinition()
+    public function testConstraintDefinition(): void
     {
         self::assertCount(1, $this->constraint);
         self::assertEquals(
@@ -39,7 +39,7 @@ class MessageTypeConstraintTest extends TestCase
      *
      * @return void
      */
-    public function testValidMessageType($message)
+    public function testValidMessageType($message): void
     {
         self::assertTrue($this->constraint->evaluate($message, '', true));
     }
@@ -52,7 +52,7 @@ class MessageTypeConstraintTest extends TestCase
      *
      * @return void
      */
-    public function testInvalidMessageType($message, $type)
+    public function testInvalidMessageType($message, $type): void
     {
         self::assertFalse($this->constraint->evaluate($message, '', true));
 
@@ -71,7 +71,7 @@ EOF
         }
     }
 
-    public function validMessageTypeProvider()
+    public function validMessageTypeProvider(): array
     {
         return [
             'string' => ['message'],
@@ -82,7 +82,7 @@ EOF
         ];
     }
 
-    public function invalidMessageTypeProvider()
+    public function invalidMessageTypeProvider(): array
     {
         return [
             'array' => [[], 'array'],

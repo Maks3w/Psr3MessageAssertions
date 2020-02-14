@@ -19,12 +19,12 @@ class TestLoggerTest extends TestCase
         $this->logger = new TestLogger();
     }
 
-    public function testValidLogLevel()
+    public function testValidLogLevel(): void
     {
         $this->logger->assertLogLevelIsValid('debug');
     }
 
-    public function testInvalidLogLevel()
+    public function testInvalidLogLevel(): void
     {
         try {
             $this->logger->assertLogLevelIsValid('invalid');
@@ -34,7 +34,7 @@ class TestLoggerTest extends TestCase
         }
     }
 
-    public function testValidMessageType()
+    public function testValidMessageType(): void
     {
         $this->logger->assertMessageType('');
     }
@@ -49,12 +49,12 @@ class TestLoggerTest extends TestCase
         }
     }
 
-    public function testValidContext()
+    public function testValidContext(): void
     {
         $this->logger->assertContext(['foo' => 'baz']);
     }
 
-    public function testInvalidContext()
+    public function testInvalidContext(): void
     {
         try {
             $this->logger->assertContext(['foo' => new \Exception()]);
@@ -64,13 +64,13 @@ class TestLoggerTest extends TestCase
         }
     }
 
-    public function testValidPlaceholder()
+    public function testValidPlaceholder(): void
     {
         $this->logger->assertPlaceholder('{foo}', ['foo' => 'baz']);
         $this->logger->assertPlaceholder('{$foo}', ['foo' => 'baz']);
     }
 
-    public function testPlaceholderIsMissing()
+    public function testPlaceholderIsMissing(): void
     {
         try {
             $this->logger->assertPlaceholder('{foo}', []);
@@ -80,7 +80,7 @@ class TestLoggerTest extends TestCase
         }
     }
 
-    public function testPlaceholderNameIsInvalid()
+    public function testPlaceholderNameIsInvalid(): void
     {
         try {
             $this->logger->assertPlaceholder('{$foo}', ['$foo' => 'baz']);
@@ -90,7 +90,7 @@ class TestLoggerTest extends TestCase
         }
     }
 
-    public function testValidLog()
+    public function testValidLog(): void
     {
         $this->logger->log(
             'debug',
@@ -115,7 +115,7 @@ class TestLoggerTest extends TestCase
      *
      * @return void
      */
-    public function testInvalidLogMessage($level, $message, array $context)
+    public function testInvalidLogMessage($level, $message, array $context): void
     {
         try {
             $this->logger->log($level, $message, $context);
@@ -125,7 +125,7 @@ class TestLoggerTest extends TestCase
         }
     }
 
-    public function invalidLogProvider()
+    public function invalidLogProvider(): array
     {
         return [
             'invalid log level' => ['invalid_level', '', []],

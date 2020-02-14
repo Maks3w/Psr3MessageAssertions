@@ -22,7 +22,7 @@ class LevelConstraintTest extends TestCase
         $this->constraint = new LevelConstraint();
     }
 
-    public function testConstraintDefinition()
+    public function testConstraintDefinition(): void
     {
         self::assertCount(1, $this->constraint);
         self::assertEquals(
@@ -38,7 +38,7 @@ class LevelConstraintTest extends TestCase
      *
      * @return void
      */
-    public function testValidLogLevel($logLevel)
+    public function testValidLogLevel($logLevel): void
     {
         self::assertTrue($this->constraint->evaluate($logLevel, '', true));
     }
@@ -50,7 +50,7 @@ class LevelConstraintTest extends TestCase
      *
      * @return void
      */
-    public function testInvalidLogLevel($logLevel)
+    public function testInvalidLogLevel($logLevel): void
     {
         self::assertFalse($this->constraint->evaluate($logLevel, '', true));
 
@@ -69,7 +69,7 @@ EOF
         }
     }
 
-    public function validLogLevelProvider()
+    public function validLogLevelProvider(): array
     {
         return [
             LogLevel::EMERGENCY => ['emergency'],
@@ -83,7 +83,7 @@ EOF
         ];
     }
 
-    public function invalidLogLevelProvider()
+    public function invalidLogLevelProvider(): array
     {
         return [
             'emerg' => ['emerg'],

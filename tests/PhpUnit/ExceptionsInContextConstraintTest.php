@@ -21,7 +21,7 @@ class ExceptionsInContextConstraintTest extends TestCase
         $this->constraint = new ExceptionsInContextConstraint();
     }
 
-    public function testConstraintDefinition()
+    public function testConstraintDefinition(): void
     {
         self::assertCount(1, $this->constraint);
         self::assertEquals(
@@ -37,7 +37,7 @@ class ExceptionsInContextConstraintTest extends TestCase
      *
      * @return void
      */
-    public function testValidConstraint($context)
+    public function testValidConstraint($context): void
     {
         self::assertTrue($this->constraint->evaluate($context, '', true));
     }
@@ -50,7 +50,7 @@ class ExceptionsInContextConstraintTest extends TestCase
      *
      * @return void
      */
-    public function testInvalidConstraint($message, $invalidKey)
+    public function testInvalidConstraint($message, $invalidKey): void
     {
         self::assertFalse($this->constraint->evaluate($message, '', true));
 
@@ -69,7 +69,7 @@ EOF
         }
     }
 
-    public function validContextProvider()
+    public function validContextProvider(): array
     {
         return [
             'exception key with Exception' => [['exception' => new \Exception()]],
@@ -78,7 +78,7 @@ EOF
         ];
     }
 
-    public function invalidContextProvider()
+    public function invalidContextProvider(): array
     {
         return [
             'foo key with Exception' => [['foo' => new \Exception()], 'foo'],

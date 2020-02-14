@@ -12,7 +12,7 @@
     "license": "BSD-2-Clause",
     "homepage": "https://github.com/Maks3w/Psr3MessageAssertions",
     "require": {
-        "php": ">= 7.1",
+        "php": ">= 7.2",
         "psr/log": "~1.0",
         "phpunit/phpunit": "^6.0||^7.0||^8.0"
     },
